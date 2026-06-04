@@ -1,0 +1,5 @@
+^\.gitignore$
+^\.Rbuildignore$
+^Makefile$
+\.o$
+\.so$
