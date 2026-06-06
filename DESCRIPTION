@@ -1,0 +1,11 @@
+Package: projektpakiety
+Type: Package
+Title: Rozwiazywanie ukladow rownan liniowych metoda LU
+Version: 1.0.0
+Date: 2026-06-06
+Author: Student XYZ
+Maintainer: Student XYZ <student@edu.pl>
+Description: Pakiet do rozwiazywania ukladow liniowych postaci Ax=b wykorzystujacy algorytm rozkladu LU z czesciowym wyborem elementu glownego (GEPP) napisany w C.
+License: AGPL (>= 3)
+Encoding: UTF-8
+RoxygenNote: 7.3.1

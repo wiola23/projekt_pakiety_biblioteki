@@ -1,3 +1,5 @@
+#include <math.h>
+void swap_rows(double* A, int n, int row1, int row2);
 int lu(double* A, int* P, int n){
     for(int p=0; p<n;++p){
         P[p]=p;
