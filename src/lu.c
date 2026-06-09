@@ -15,7 +15,7 @@ int lu(double* A, int* P, int n){
     }
 
     if (fabs(A[max_row+ k*n])< 1e-13){
-        return 1;
+        return -1;
     }
 
     if (max_row != k){
