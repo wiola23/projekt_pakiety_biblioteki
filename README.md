@@ -3,6 +3,11 @@
 ## Description
 The package contains solvers for systems of linear equations in the form of Ax = b, where A is a square matrix and b is a numeric vector. The package implements two primary approaches written in C: LU decomposition with partial pivoting, and iterative methods including both Jacobi and Gauss-Seidel algorithms. Iterative solvers utilize Gill's stopping criteria. Computational cores are parallelized using OpenMP.
 
+## Build status
+  <!-- badges: start -->
+  [![R-CMD-check](https://github.com/wiola23/projekt_pakiety_biblioteki/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/wiola23/projekt_pakiety_biblioteki/actions/workflows/R-CMD-check.yaml)
+  <!-- badges: end -->
+
 ## Installation
 In order to install the project from GitHub:
 remotes::install_github("wiola23/projekt_pakiety_biblioteki)

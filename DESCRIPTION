@@ -3,7 +3,7 @@ Type: Package
 Title: Rozwiązywanie układów równań liniowych metodą rozkładu LU, Jacobi'ego lub Gaussa-Seidel'a
 Version: 2.0.0
 Date: 2026-06-10
-Authors@R: person("Wioletta", "R", email = "student@edu.pl", role = c("aut", "cre"))
+Authors@R: person("Wioletta", "R", email = "jasietutylkoucze@gmail.com", role = c("aut", "cre"))
 Description: Pakiet do rozwiazywania ukladow liniowych postaci Ax=b wykorzystujacy algorytm rozkladu LU z czesciowym wyborem elementu glownego (GEPP), lub metody iteratywne Jacobi'ego lub Gaussa-Seidel'a. Napisany w C.
 License: MIT + file LICENSE
 SystemRequirements: OpenMP
