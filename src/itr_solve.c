@@ -47,7 +47,7 @@ SEXP R_itr_solve(SEXP r_A, SEXP r_b, SEXP r_x0, SEXP r_max_iter, SEXP r_d1, SEXP
           for(int i = 0; i < n; ++i) {
         x[i] = x0[i];
         }
-    double* x_o = (double *)Calloc(n,double);
+    double* x_o = (double *)R_Calloc(n,double);
 
     double normd, norm;
     int iter;
@@ -80,7 +80,7 @@ SEXP R_itr_solve(SEXP r_A, SEXP r_b, SEXP r_x0, SEXP r_max_iter, SEXP r_d1, SEXP
             iter++;
             break;}
     }
-    Free(x_o);
+    R_Free(x_o);
     SEXP r_list = PROTECT(Rf_allocVector(VECSXP,2));
     SET_VECTOR_ELT(r_list, 0, r_x);
     SET_VECTOR_ELT(r_list, 1, PROTECT(Rf_ScalarInteger(iter)));
