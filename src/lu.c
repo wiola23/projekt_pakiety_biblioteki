@@ -1,4 +1,5 @@
 #include <math.h>
+#include <omp.h>
 void swap_rows(double* A, int n, int row1, int row2);
 int lu(double* A, int* P, int n){
     for(int p=0; p<n;++p){
@@ -24,7 +25,7 @@ int lu(double* A, int* P, int n){
     P[k]= P[max_row];
     P[max_row]=temp;
     }
-
+    #pragma omp parallel for
     for(int w=k+1;w<n;++w){
         A[w+k*n] = A[w+k*n]/A[k+k*n];
         for (int j=k+1;j<n;++j){

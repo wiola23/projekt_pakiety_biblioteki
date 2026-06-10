@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <R.h>
 #include <Rinternals.h>
-
+#include <omp.h>
 
 SEXP R_itr_solve(SEXP r_A, SEXP r_b, SEXP r_x0, SEXP r_max_iter, SEXP r_d1, SEXP r_d2, SEXP r_method){
 
@@ -30,7 +30,7 @@ SEXP R_itr_solve(SEXP r_A, SEXP r_b, SEXP r_x0, SEXP r_max_iter, SEXP r_d1, SEXP
     if(XLENGTH(r_x0) != n){
         Rf_error("Wektor x0 musi miec te sama dlugosc co wektor b");
     }
-    int n=XLENGTH(r_b);
+    
     int max_iter=Rf_asInteger(r_max_iter);
     double d1 = Rf_asReal(r_d1);
     double d2 = Rf_asReal(r_d2);
@@ -48,7 +48,7 @@ SEXP R_itr_solve(SEXP r_A, SEXP r_b, SEXP r_x0, SEXP r_max_iter, SEXP r_d1, SEXP
         x[i] = x0[i];
         }
     double* x_o = (double *)Calloc(n,double);
-    double s;
+
     double normd, norm;
     int iter;
     for(iter=0;iter<max_iter;++iter){
@@ -57,8 +57,9 @@ SEXP R_itr_solve(SEXP r_A, SEXP r_b, SEXP r_x0, SEXP r_max_iter, SEXP r_d1, SEXP
         }
         normd=0;
         norm=0;
+        #pragma omp parallel for if(method == 0)
         for(int r=0; r<n;++r){
-            s=0;
+            double s=0;
             for(int c=0;c<n;++c){
                 if(c==r) continue;
                 if(method==0){
@@ -70,7 +71,7 @@ SEXP R_itr_solve(SEXP r_A, SEXP r_b, SEXP r_x0, SEXP r_max_iter, SEXP r_d1, SEXP
             }
             x[r]=(b[r]-s)/A[r+n*r];
         }
-
+        #pragma omp parallel for reduction(+:normd, norm)
         for(int t=0;t<n;++t){
             normd+=pow((x[t]-x_o[t]),2);
             norm+=pow((x_o[t]),2);

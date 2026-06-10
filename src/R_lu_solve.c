@@ -49,7 +49,7 @@ SEXP R_lu_solve(SEXP RA, SEXP Rb){
     int* P = Calloc(n,int);
 
     int flag = lu(A_ptr, P,n);
-    if(flag ==1){
+    if(flag ==-1){
         Free(P);
         UNPROTECT(1);
         Rf_error("Wyznacznik zerowy");

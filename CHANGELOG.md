@@ -5,3 +5,9 @@
 * Algorithm written in C
 * Documentation
 * Examples of usage
+
+# projektpakiety 2.0.0
+
+* Added `iterative_solve` function which uses Jacobi or Gauss-Seidel method
+* Optimised using OpenMP
+* Created tests using testhat

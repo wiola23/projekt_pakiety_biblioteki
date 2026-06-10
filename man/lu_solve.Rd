@@ -18,3 +18,8 @@ A numeric vector representing a solution
 The function solves linear equations in form of Ax=b by using LU
 decomposition with partial pivoting (GEPP) all implemented in C language.
 }
+\examples{
+A <- matrix(c(2, 1, -1, -3, -1, 2, -2, 1, 2), nrow = 3, byrow = TRUE)
+b <- c(8, -11, -3)
+lu_solve(A, b)
+}
