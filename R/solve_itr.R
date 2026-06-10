@@ -36,7 +36,7 @@ iterative_solve <- function(A, b, x0 = rep(0, length(b)), method = c("jacobi", "
     names(result) <- c("solution", "iterations")
 
     if (result$iterations >= max_iter) {
-    warning(sprintf("Algorytm osiągnął limit iteracji (max_iter = %d) i mógł nie zbiec do końca!", max_iter))
+    warning(sprintf("Algorytm osiagnal limit iteracji (max_iter = %d)!", max_iter))
   }
   return(result)
 }

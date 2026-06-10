@@ -5,10 +5,9 @@ Version: 2.0.0
 Date: 2026-06-10
 Authors@R: person("Wioletta", "R", email = "student@edu.pl", role = c("aut", "cre"))
 Description: Pakiet do rozwiazywania ukladow liniowych postaci Ax=b wykorzystujacy algorytm rozkladu LU z czesciowym wyborem elementu glownego (GEPP), lub metody iteratywne Jacobi'ego lub Gaussa-Seidel'a. Napisany w C.
-License: MIT
+License: MIT + file LICENSE
 SystemRequirements: OpenMP
 Depends: R (>= 4.0.0)
 Suggests: testthat (>= 3.0.0)
-Imports: stats
 Encoding: UTF-8
 RoxygenNote: 7.3.1
