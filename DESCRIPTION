@@ -9,6 +9,6 @@ License: MIT + file LICENSE
 SystemRequirements: OpenMP
 Depends: R (>= 4.0.0)
 Suggests: testthat (>= 3.0.0)
-URL: https://github.com/wiola23/projekt_pakiety_biblioteki
+URL: https://wiola23.github.io/projekt_pakiety_biblioteki
 Encoding: UTF-8
 RoxygenNote: 7.3.1
