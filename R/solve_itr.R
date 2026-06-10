@@ -9,16 +9,14 @@
 #' @param d1 A numeric value specifying the relative error tolerance (default: 1e-10)
 #' @param d2 A numeric value specifying the absolute error tolerance (default: 1e-10)
 #' @return A list containing two elements:
-#' \item{solution}{A numeric vector representing the calculated solution x.}
-#' \item{iterations}{An integer indicating the number of iterations actually performed.}
+#' \item{solution}{A numeric solution vector x.}
+#' \item{iterations}{The number of iterations performed, an integer.}
 #' @useDynLib projektpakiety
-#' 
+#' @references "Notatki do wykładu Metody Numeryczne" by dr inż. Iwona Wróbel
 #' @examples
 #' A <- matrix(c(10, -1, 2, -1, 11, -1, 2, -1, 10), nrow = 3, byrow = TRUE)
 #' b <- c(6, 25, -11)
-#' # Start with default zeros:
 #' iterative_solve(A, b, method = "jacobi")
-#' # Start with a specific guess:
 #' iterative_solve(A, b, x0 = c(1, 1, 1), method = "gauss-seidel")
 #' @export 
 #' 

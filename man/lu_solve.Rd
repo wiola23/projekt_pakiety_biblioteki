@@ -23,3 +23,6 @@ A <- matrix(c(2, 1, -1, -3, -1, 2, -2, 1, 2), nrow = 3, byrow = TRUE)
 b <- c(8, -11, -3)
 lu_solve(A, b)
 }
+\references{
+"Notatki do wykładu Metody Numeryczne" by dr inż. Iwona Wróbel
+}

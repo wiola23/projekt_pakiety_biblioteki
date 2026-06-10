@@ -32,8 +32,8 @@ iterative_solve(
 }
 \value{
 A list containing two elements:
-\item{solution}{A numeric vector representing the calculated solution x.}
-\item{iterations}{An integer indicating the number of iterations actually performed.}
+\item{solution}{A numeric solution vector x.}
+\item{iterations}{The number of iterations performed, an integer.}
 }
 \description{
 The function solves linear equations in form of Ax=b by using Jacobi or Gauss-Seidel methods (depending on choice) using Gill's stopping criteria, implemented in C language
@@ -41,8 +41,9 @@ The function solves linear equations in form of Ax=b by using Jacobi or Gauss-Se
 \examples{
 A <- matrix(c(10, -1, 2, -1, 11, -1, 2, -1, 10), nrow = 3, byrow = TRUE)
 b <- c(6, 25, -11)
-# Start with default zeros:
 iterative_solve(A, b, method = "jacobi")
-# Start with a specific guess:
 iterative_solve(A, b, x0 = c(1, 1, 1), method = "gauss-seidel")
+}
+\references{
+"Notatki do wykładu Metody Numeryczne" by dr inż. Iwona Wróbel
 }

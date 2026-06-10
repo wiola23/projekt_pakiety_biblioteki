@@ -5,6 +5,7 @@
 #' @param b A numeric vector 
 #' @return A numeric vector representing a solution
 #' @useDynLib projektpakiety
+#' @references "Notatki do wykładu Metody Numeryczne" by dr inż. Iwona Wróbel
 #' @examples
 #' A <- matrix(c(2, 1, -1, -3, -1, 2, -2, 1, 2), nrow = 3, byrow = TRUE)
 #' b <- c(8, -11, -3)
