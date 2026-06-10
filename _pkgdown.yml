@@ -1,0 +1,5 @@
+url: https://wiola23.github.io/projekt_pakiety_biblioteki/
+destination: docs
+
+template:
+  bootstrap: 5
