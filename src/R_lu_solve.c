@@ -2,6 +2,7 @@
 #include <R.h>
 #include <Rinternals.h>
 
+
 extern void swap_rows(double* A,int n, int row1, int row2);
 extern int lu(double* A, int* P, int n);
 extern void lu_solve(const double* A, const int* P,const double* b, double* x, int n);
@@ -46,17 +47,17 @@ SEXP R_lu_solve(SEXP RA, SEXP Rb){
     }
     SEXP Rx = PROTECT(Rf_allocVector(REALSXP,n));
     double* x_ptr = REAL(Rx);
-    int* P = Calloc(n,int);
+    int* P = R_Calloc(n,int);
 
     int flag = lu(A_ptr, P,n);
     if(flag ==-1){
-        Free(P);
+        R_Free(P);
         UNPROTECT(1);
         Rf_error("Wyznacznik zerowy");
     }
 
     lu_solve(A_ptr, P, b_ptr, x_ptr, n);
-        Free(P);
+        R_Free(P);
         UNPROTECT(1);
 
     return Rx;
