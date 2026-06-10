@@ -3,7 +3,9 @@
 #include <stdlib.h>
 #include <R.h>
 #include <Rinternals.h>
+#ifdef _OPENMP
 #include <omp.h>
+#endif
 
 SEXP R_itr_solve(SEXP r_A, SEXP r_b, SEXP r_x0, SEXP r_max_iter, SEXP r_d1, SEXP r_d2, SEXP r_method){
 

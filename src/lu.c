@@ -1,5 +1,7 @@
 #include <math.h>
+#ifdef _OPENMP
 #include <omp.h>
+#endif
 void swap_rows(double* A, int n, int row1, int row2);
 int lu(double* A, int* P, int n){
     for(int p=0; p<n;++p){
